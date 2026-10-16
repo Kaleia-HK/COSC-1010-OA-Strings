@@ -27,4 +27,9 @@ number_assign = {
     8: ["T", "U", "V"],
     9: ["W", "X", "Y", "Z"]
 }
+
 get_number = (input("Please the phone number: ").upper())
+
+number = number_assign[get_number]
+
+print(f"The number entered is {number}")
