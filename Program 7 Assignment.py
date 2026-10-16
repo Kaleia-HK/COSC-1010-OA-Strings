@@ -32,4 +32,4 @@ get_number = (input("Please the phone number: ").upper())
 
 number = number_assign[get_number]
 
-print(f"The number entered is {number}")
+print(f"The number entered is {number}") # finish
