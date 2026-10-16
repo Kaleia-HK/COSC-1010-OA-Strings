@@ -16,7 +16,6 @@
 # if the user enters 555-GET-FOOD, the application should display 555-438-3663.
 
 print("Please enter in a number in the format: XXX-XXX-XXXX")
-get_number = (input("Please the phone number: ").upper())
 
 number_assign = {
     2: ["A", "B", "C"],
@@ -28,4 +27,4 @@ number_assign = {
     8: ["T", "U", "V"],
     9: ["W", "X", "Y", "Z"]
 }
-
+get_number = (input("Please the phone number: ").upper())
