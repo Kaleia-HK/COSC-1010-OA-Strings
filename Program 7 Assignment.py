@@ -15,21 +15,24 @@
 # For example,
 # if the user enters 555-GET-FOOD, the application should display 555-438-3663.
 
+import re
+
 print("Please enter in a number in the format: XXX-XXX-XXXX")
 
-number_assign = {
-    2: ["A", "B", "C"],
-    3: ["D", "E", "F"],
-    4: ["G", "H", "I"],
-    5: ["J", "K", "L"],
-    6: ["M", "N", "O"],
-    7: ["P", "Q", "R", "S"],
-    8: ["T", "U", "V"],
-    9: ["W", "X", "Y", "Z"]
-}
+number_assign = {'A': 2, 'B': 2, 'C': 2, 'D': 3, 'E': 3, 'F': 3, 'G': 4, 'H': 4, 'I': 4, 'J': 5, 'K': 5, 'L': 5, 'M': 6,
+             'N': 6, 'O': 6, 'P': 7, 'Q': 7, 'R': 7, 'S': 7, 'T': 8, 'U': 8, 'V': 8, 'W': 9, 'X': 9, 'Y': 9, 'Z': 9}
 
 get_number = (input("Please the phone number: ").upper())
 
-number = number_assign[get_number]
 
-print(f"The number entered is {number}") # finish
+charmask = re.compile(r'[A-Z]')
+output = []
+for letter in get_number:
+    if charmask.match(letter):
+        output.append(str(number_assign.get(letter)))
+    else:
+        output.append(str(letter))
+
+
+
+print(f"The number entered is {''.join(output)}")
